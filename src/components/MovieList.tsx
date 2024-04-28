@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { API_KEY } from "@/utils/utils";
+import { omdbapi_url, API_KEY } from "@/utils/utils";
 
 import Movie from "./Movie";
 
@@ -32,7 +32,7 @@ export default function MovieList({
           setIsLoading(true);
           setError("");
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchQuery}&page=${page}`
+            `${omdbapi_url}&s=${searchQuery}&page=${page}`
           );
 
           if (!res.ok)

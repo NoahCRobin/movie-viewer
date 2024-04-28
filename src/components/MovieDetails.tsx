@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { MovieData, API_KEY } from "@/utils/utils";
+import { MovieData, omdbapi_url } from "@/utils/utils";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,9 +11,7 @@ export default function MovieDetails({ movieId }: { movieId: string }) {
   useEffect(
     function () {
       async function getMovieDetails() {
-        const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}`
-        );
+        const res = await fetch(`${omdbapi_url}&i=${movieId}`);
         const data = await res.json();
         setMovieData(data);
         console.log(data);

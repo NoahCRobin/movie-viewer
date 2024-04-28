@@ -26,3 +26,5 @@ export interface MovieData {
 }
 
 export const API_KEY = "4f306c76";
+
+export const omdbapi_url = `https://www.omdbapi.com/?apikey=${API_KEY}`;
