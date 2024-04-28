@@ -5,7 +5,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 150, 150, 150;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +17,9 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: black;
+  background: rgb(159, 159, 159);
+  padding: 0 2.4rem 2.4rem;
 }
 
 @layer utilities {
@@ -31,3 +27,76 @@ body {
     text-wrap: balance;
   }
 }
+
+/* * {
+  border: 1px solid black;
+} */
+
+.layout-nav {
+  background: #f6f8e8;
+}
+
+.search-bar {
+  background-color: #c1e1d2;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 3.2rem;
+  height: 4rem;
+}
+
+.main {
+  margin-top: 2.4rem;
+  height: calc(100vh - 4rem - 3 * 2.4rem);
+  gap: 2.4rem;
+}
+
+.box {
+  background-color: #fed9c9;
+}
+
+li:hover {
+  background-color: #ffefd8;
+  cursor: pointer;
+}
+
+.movie-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #ffefd8;
+}
+
+.movie-about {
+  background-color: #ffefd8;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: large;
+}
+
+.active {
+  background-color: #c1e1d2;
+}
+
+.navbar {
+  margin-bottom: 10px;
+}
+
+.navbar-link {
+  border-radius: 5px;
+  margin: 10px 20px;
+  padding: 0.33rem;
+}
+
+.navbar-link:hover {
+  background-color: #c1e1d2;
+}
+
+/* 
+
+#C1E1D2
+#F6F8e8
+#FEC994
+#FED9C9
+#FFEFD8 
+
+*/
