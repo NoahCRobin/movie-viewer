@@ -27,7 +27,7 @@ export default function MovieDetails({ movieId }: { movieId: string }) {
     <div className="box rounded text-center">
       {movieData ? (
         <>
-          <div className="movie-details grid-cols-2 grid-row-4 justify-items-center gap-1 p-3 rounded">
+          <div className="movie-details grid-cols-2 grid-row-4 justify-items-center gap-1 p-3">
             <img
               className="row-span-4"
               src={movieData.Poster}
@@ -41,7 +41,7 @@ export default function MovieDetails({ movieId }: { movieId: string }) {
             <p>{movieData.Released}</p>
             <p>{movieData.Genre}</p>
           </div>
-          <div className="movie-about flex flex-col mt-5 p-1.5 gap-5 rounded">
+          <div className="movie-about flex flex-col mt-5 p-1.5 gap-5">
             <p className="italic">{movieData.Plot}</p>
             <p>Starring: {movieData.Actors}</p>
             <p>Directed By: {movieData.Director}</p>
