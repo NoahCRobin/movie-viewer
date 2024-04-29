@@ -13,7 +13,6 @@ export default function MovieDetailPage({
 }) {
   console.log(params);
   const [movieData, setMovieData] = useState<MovieData | null>(null);
-
   /*
    TODO: 
     Find a way to pass the Movie object here when coming from /movieviewer/ 

@@ -9,11 +9,10 @@ interface MovieRating {
 }
 
 export default function Rating({ imdbid }: { imdbid: string }) {
-  console.log("imdbid", imdbid);
   const [username, setUsername] = useState("");
   const [rating, setRating] = useState("");
-
-  console.log(usePathname());
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleUsernameInput(usernameInput: string) {
     setUsername(usernameInput);
@@ -30,8 +29,6 @@ export default function Rating({ imdbid }: { imdbid: string }) {
       imdbid: imdbid,
     };
 
-    console.log(data);
-
     fetch("https://eguxcy2sv8.execute-api.us-east-1.amazonaws.com/prod/add", {
       method: "POST",
       headers: {
@@ -40,26 +37,37 @@ export default function Rating({ imdbid }: { imdbid: string }) {
       },
       body: JSON.stringify(data),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then(() => setIsSubmitted(true))
       .catch((err) => console.log(`ERROR: ${err}`));
+    setIsLoading(false);
   }
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Enter your Name"
-        value={username}
-        onChange={(e) => handleUsernameInput(e.target.value)}
-      />
-      <input
-        value={rating}
-        onChange={(e) => handleRatingInput(e.target.value)}
-        type="number"
-        placeholder="Enter your Rating"
-      />
-      <button onClick={handleSubmit}>Submit</button>
+      {!isSubmitted ? (
+        <>
+          <input
+            type="text"
+            placeholder="Enter your Name"
+            value={username}
+            onChange={(e) => handleUsernameInput(e.target.value)}
+          />
+          <input
+            value={rating}
+            onChange={(e) => handleRatingInput(e.target.value)}
+            type="number"
+            placeholder="Enter your Rating"
+          />
+          <button
+            onClick={() => (handleSubmit(), setIsLoading(true))}
+            disabled={isLoading}
+          >
+            Submit
+          </button>
+        </>
+      ) : (
+        <h3>Thanks for Rating!</h3>
+      )}
     </>
   );
 }

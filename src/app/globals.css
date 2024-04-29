@@ -95,7 +95,7 @@ h3 {
   background-color: #ffefd8;
   border-radius: 5px;
   padding: 0.25rem;
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
 }
 
 .navbar-link:hover,
