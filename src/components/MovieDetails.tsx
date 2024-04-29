@@ -23,6 +23,8 @@ export default function MovieDetails({ movieId }: { movieId: string }) {
     [movieId]
   );
 
+  //https://eguxcy2sv8.execute-api.us-east-1.amazonaws.com/prod/all
+
   return (
     <div className="box rounded text-center">
       {movieData ? (

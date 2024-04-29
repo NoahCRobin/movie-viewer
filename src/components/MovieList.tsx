@@ -74,16 +74,6 @@ export default function MovieList({
     if (page !== 1) {
       if (listInnerRef.current) {
         const { scrollTop, scrollHeight, clientHeight } = listInnerRef.current;
-        // console.log(
-        //   "scrollTop",
-        //   scrollTop,
-        //   "clientHeight",
-        //   clientHeight,
-        //   "scrollHeight",
-        //   scrollHeight,
-        //   "scrollTop + clientHeigh",
-        //   scrollTop + clientHeight
-        // );
         console.log(movieList.length);
         if (Math.ceil(scrollTop) + clientHeight === scrollHeight) {
           handleIncrementPage();

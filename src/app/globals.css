@@ -46,13 +46,13 @@ body {
 }
 
 .main {
-  margin-top: 2.4rem;
+  margin-top: 1rem;
   height: calc(100vh - 4rem - 3 * 2.4rem);
   gap: 2.4rem;
 }
 
 .box {
-  background-color: #fed9c9;
+  background-color: #fee3c9;
 }
 
 li:hover {
@@ -80,8 +80,9 @@ h3 {
 }
 
 .navbar {
-  margin-bottom: 10px;
-  background-color: #ffefd8;
+  margin-bottom: 1rem;
+  background-color: #fed9c9;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .navbar-link {
@@ -102,6 +103,12 @@ h3 {
   background-color: #c1e1d2;
 }
 
+.movie-detail-page {
+  background-color: #fee3c9;
+  padding: 0 2.5rem;
+  border-radius: 5px;
+}
+
 /* 
 
 #C1E1D2
@@ -109,5 +116,6 @@ h3 {
 #FEC994
 #FED9C9
 #FFEFD8 
+#fee3c9
 
 */
