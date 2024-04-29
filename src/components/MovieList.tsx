@@ -99,19 +99,23 @@ export default function MovieList({
       onScroll={onScroll}
     >
       <div className="grid align-items-center">
-        <ul className="list list-movies ">
-          {movieList.length > 0
-            ? movieList.map((movie) => (
-                <Movie
-                  movie={movie}
-                  key={movie.imdbID}
-                  onSelectMovie={onSelectMovie}
-                />
-              ))
-            : "Search for a movie above"}
-        </ul>
+        {movieList.length > 0 ? (
+          <ul className="list list-movies ">
+            {movieList.map((movie) => (
+              <Movie
+                movie={movie}
+                key={movie.imdbID}
+                onSelectMovie={onSelectMovie}
+              />
+            ))}
+          </ul>
+        ) : (
+          <p className="justify-self-center">Search for a movie above</p>
+        )}
         {page === 1 && searchQuery !== "" && (
-          <button onClick={handleIncrementPage}>Load More</button>
+          <button className="movie-link" onClick={handleIncrementPage}>
+            Load More
+          </button>
         )}
       </div>
     </div>

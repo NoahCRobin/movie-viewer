@@ -90,7 +90,15 @@ h3 {
   padding: 0.5rem;
 }
 
-.navbar-link:hover {
+.movie-link {
+  background-color: #ffefd8;
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: 0.5rem;
+}
+
+.navbar-link:hover,
+.movie-link:hover {
   background-color: #c1e1d2;
 }
 

@@ -47,7 +47,7 @@ export default function MovieDetails({ movieId }: { movieId: string }) {
             <p>Directed By: {movieData.Director}</p>
           </div>
           <Link href={`/movieviewer/${movieData.imdbID}`}>
-            Click Here to go this movies detail page
+            <button className="movie-link">Go to Movie Details Page</button>
           </Link>
         </>
       ) : (
