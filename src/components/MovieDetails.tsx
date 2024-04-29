@@ -49,7 +49,7 @@ export default function MovieDetails({ movieId }: { movieId: string }) {
             <p>Directed By: {movieData.Director}</p>
           </div>
           <Link href={`/movieviewer/${movieData.imdbID}`}>
-            <button className="movie-link">Go to Movie Details Page</button>
+            <button className="movie-link m-1">Go to Movie Details Page</button>
           </Link>
         </>
       ) : (
